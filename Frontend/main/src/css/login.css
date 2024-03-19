@@ -1,0 +1,185 @@
+
+.loginBack{
+    background-color: #2222;
+    width: 100%;
+    height: 100vh;
+   
+}
+.outlineBorder{
+    width: 50%;
+    height: 60vh;
+    border:2px solid rgba(0, 0, 0, 0);
+    border-radius: 25px;
+    position: absolute;
+    left: 25%;
+    top: 20vh;
+    background-color: white;
+}
+
+.logoareaLogin{
+    background-image:url("../../assets/img/back.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 50%;
+    height: 60vh;
+    position: absolute;
+    top: -2px;
+    right: 0px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.loginForm{
+    align-self: auto;
+    margin-top: 10vh;
+}
+.loginForm>h1{
+    margin-left: 20%;
+    font-size: 30px;    
+}
+.loginForm>p{
+    margin-left: 11%;
+}
+.loginForm>input{
+    margin-left: 9%;
+    width:35%;
+    margin-bottom: 15px;
+    border-color: transparent;
+    background-color: #F0EDFF;
+    border-radius: 16px;
+    padding-left: 20px;
+    color: #1c1c1caf;
+    height: 40px;
+}
+.loginForm>button{
+    margin-left: 20%;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px ;
+    border-color: transparent;
+    font-size: 13px;
+    font-weight: bold;
+
+    background: hsla(54, 86%, 59%, 1);
+
+background: linear-gradient(90deg, hsla(54, 86%, 59%, 1) 25%, hsla(126, 83%, 57%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(54, 86%, 59%, 1) 25%, hsla(126, 83%, 57%, 1) 100%);
+
+background: -webkit-linear-gradient(90deg, hsla(54, 86%, 59%, 1) 25%, hsla(126, 83%, 57%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F0DE3F", endColorstr="#38ED4A", GradientType=1 );
+}
+
+.loginForm>button:hover{
+    opacity: 80%;
+}
+
+.blurArea{
+    height: 46vh;
+    width: 60%;
+    background-color: #ffffff;
+    opacity: 16%;
+    margin-left: 20%;
+    margin-top: 8vh;
+    border-radius: 46px;
+    
+    
+}
+.blurArea:before {
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(10px);
+}
+
+.logoVanni{
+    width: 50%;
+    position: absolute;
+    top: 40%;
+    right: 0;
+}
+.labelLogin:visited{
+    color: black;
+}
+.labelLogin>p{
+    padding-left: 20%;
+    padding-top: 2%;
+}
+.labelLogin label{
+    font-weight: bold;
+}
+
+
+
+/*
+.row{
+    display: flex;
+    
+}
+
+.column1{
+    flex: 50%;
+   
+    border: 2px solid rgb(36, 9, 9);
+    width: 50%;
+    padding: 30px;
+    top: 45%;
+    left: 80%;
+    margin: 40px;
+    background: white;
+    
+    text-align: center;
+}
+.column1 h3{
+    color: rgb(63, 189, 94);
+    font-weight: 600;
+
+}
+.column1 input[type="text"], .column1 input[type= "password"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: rgb(23, 238, 76);
+    border-radius: 24px;
+    transition: 0.25s;
+ }
+ 
+ .column1 input[type = "text"]:focus, .column1 input[type = "password"]:focus{
+    width: 280px;
+    border-color: #2ecc71;
+}
+.column1 input[type="submit"]{
+border: 0;
+background: none;
+display: block;
+margin: 20px auto;
+text-align: center;
+border: 2px solid #2ecc71;
+padding: 14px 40px;
+outline: none;
+color: rgb(78, 131, 91);
+border-radius: 24px;
+transition: 0.25s;
+cursor: pointer;
+
+}
+.column1 input[type="submit"]:hover{
+ background: #2ecc71;
+ color:white;
+}
+.column2{
+   
+    background-image: url('../../assets/img/back.png');
+    background-size: cover;
+    border: 2px solid rgb(66, 42, 175);
+   
+}
+img{
+    width: 300px;
+    height: 350px;
+}
+
+*/
