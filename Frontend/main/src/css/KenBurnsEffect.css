@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  :root {
+    font-size: calc(0.5vw + 1vh + 0.5vmin);
+  }
+  body {
+    font: 100 50%/1.5 'Roboto', sans-serif;
+  }
+  .intro {
+    position: relative;
+    margin: 1em;
+    padding: 0.2em 0.6em;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1em;
+    max-width: 26em;
+  }
+  .intro h1 {
+    margin-bottom: 0.5em;
+    line-height: 1;
+    font-weight: 100;
+  }
+  .intro p{
+    background-color: #00000086;
+  }
+  #CrossFade {
+    background: #00000098;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.61);
+  }
+  #CrossFade img {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    height: auto;
+    background: #000;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    opacity: 0;
+    -webkit-transform: scale(1.4) rotate(12deg);
+            transform: scale(1.4) rotate(12deg);
+    -webkit-animation: CrossFade 24s infinite;
+            animation: CrossFade 24s infinite;
+  }
+  #CrossFade img:nth-child(3) {
+    -webkit-animation-delay: 6s;
+            animation-delay: 6s;
+  }
+  #CrossFade img:nth-child(2) {
+    -webkit-animation-delay: 12s;
+            animation-delay: 12s;
+  }
+  #CrossFade img:nth-child(1) {
+    -webkit-animation-delay: 18s;
+            animation-delay: 18s;
+  }
+  /* 
+  
+  $duration = 12
+  $slides = 4
+  $step = $duration/$slides
+  setDelayRevers($duration, $slides)
+    
+    for index in (2..$slides)
+      &:nth-child({index -1}) 
+        animation-delay ($step*index)s
+  
+  #CrossFade
+    height 100vh
+    overflow hidden
+    position relative
+    
+    display flex
+    img
+      align-self center
+      position absolute
+      
+      min-width 100%
+      min-height 100%
+      height auto
+      
+      backface-visibility hidden
+      opacity 0
+    
+      transform scale(1.4) rotate(12deg)
+      animation CrossFade ($duration)s infinite 
+      setDelayRevers($duration, $slides)   
+  @keyframes CrossFade
+    25%
+      opacity 1
+      transform scale(1) rotate(0)
+    40%
+      opacity 0
+      
+  */
+  @-webkit-keyframes CrossFade {
+    25% {
+      opacity: 1;
+      -webkit-transform: scale(1) rotate(0);
+              transform: scale(1) rotate(0);
+    }
+    40% {
+      opacity: 0;
+    }
+  }
+  @keyframes CrossFade {
+    25% {
+      opacity: 1;
+      -webkit-transform: scale(1) rotate(0);
+              transform: scale(1) rotate(0);
+    }
+    40% {
+      opacity: 0;
+    }
+  }
+  
+  .header-logo{
+    position: absolute;
+    left: 0;
+    top: -30px;
+    height: 200px;
+    width: 230px;
+    z-index: 1;
+  }
+  
