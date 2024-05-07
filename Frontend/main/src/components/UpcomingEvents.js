@@ -36,7 +36,30 @@ function UpcomingEvents() {
     status: false,
 
     marks:0,
-
-    
-
   });
+
+  useEffect(() => {
+
+    const fetchData = async () => {
+
+      try {
+
+        const response = await axios.get('http://localhost:8000/events');
+
+        
+
+        console.log('API Response:', response.data);
+
+        setEventDetails(response.data);
+
+        
+
+      } catch (error) {
+
+        console.error('Error fetching members:', error.message);
+
+      }
+
+    };
+
+
