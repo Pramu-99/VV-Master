@@ -109,4 +109,63 @@ const UserProfile = (props) => {
           paddingTop: '50px'
         }
       };
+      return (props.trigger)?(
+        <div style={styles.popup}>
+            <div style={styles.popupinner}>
+                <button style={styles.closebtn} onClick={()=>props.setTrigger(false)}>Close</button>
+            
     
+                <h2>As A Cameraman</h2>
+            {Array.isArray(review.existingPosts) ? (
+      review.existingPosts.map((item, key) => {
+        if (memreg === item.regno && item.role=="Cameraman") {
+          
+          console.log(item.regno);
+          
+          return (
+            <div key={key} style={styles.reviewBox}>
+              <div style={styles.circle}></div>
+              <div style={styles.reviewContent}>
+                <b>
+                  <p>{item.userregno}</p>
+                  <p>CURRENT DATE: {new Date().toLocaleDateString()} </p>
+                  <div style={styles.ratingStars}>{renderStars(item.rate)}</div>
+                </b>
+                <p style={styles.messageLink}><b>{item.reviewmsg}</b></p>
+              </div>
+            </div>
+          );
+          
+        }
+      })
+    ) : (
+      <p>error</p>
+    )}
+    
+    <h2 style={styles.heading}>As A Editor</h2>
+            {Array.isArray(review.existingPosts) ? (
+      review.existingPosts.map((item, key) => {
+        if (memreg === item.regno && item.role=="Editor") {
+          
+          console.log(item.regno);
+          
+          return (
+            <div key={key} style={styles.reviewBox}>
+              <div style={styles.circle}></div>
+              <div style={styles.reviewContent}>
+                <b>
+                  <p>{item.userregno}</p>
+                  <p>CURRENT DATE: {new Date().toLocaleDateString()} </p>
+                  <div style={styles.ratingStars}>{renderStars(item.rate)}</div>
+                </b>
+                <p style={styles.messageLink}><b>{item.reviewmsg}</b></p>
+              </div>
+            </div>
+          );
+          
+        }
+        
+      })
+    ) : (
+      <p>error</p>
+    )}    
