@@ -124,7 +124,121 @@ function UpcomingEvents() {
 
   };
 
+const handleChange = (e) => {
 
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  };
+
+
+
+  const onSubmit = () => {
+
+    console.log(formData.userregno);
+
+    console.log(formData.event);
+
+    console.log(formData.roleapply);
+
+    console.log(formData.status);
+
+    savePostToMongo();
+
+  };
+
+
+
+  return (
+
+    <div className="Container_1">
+
+      <UserNavbar/>  
+
+      <div className="form_container">
+
+        <div className="left_form_container p-3">
+
+          <h1 style={{textAlign:"center"}}>Appilication Form</h1>
+
+
+
+          <form className="event_form">
+
+            <div className="form-group">
+
+              <h2 style={{fontSize:"1rem"}}>Up Comming Events</h2>
+
+              <select className="inline-select" placeholder="Select Event" name='event' onChange={handleChange} value={formData.event}>
+
+              <option disabled={true} value={"Select Event"}>Select Event</option>
+
+              {Array.isArray(eventDetails.existingPosts) ? (
+
+                eventDetails.existingPosts.map((res, index) => (
+
+              
+
+                  <option >{res.eventname}</option>
+
+                ))
+
+              ):(
+
+                  <option>no any records</option>
+
+                )
+
+              }
+
+                
+
+              </select>
+
+            </div>
+
+
+
+            <div className="form-group mt-5">
+
+              <p className="inline-label">I like to contribute as</p>
+
+              <select className="inline-select" name="roleapply" onChange={handleChange} value={formData.roleapply}>
+
+                <option disabled={true} >Select Role</option>
+
+                <option >Cameraman</option>
+
+                <option >Designer</option>
+
+              </select>
+
+            </div>
+
+
+
+            <input className="submit_But mt-5" type="button" onClick={onSubmit} value={"Confirm"}/>
+
+              
+
+          </form>
+
+        </div>
+
+        <div className="right_form_container d-flex ">
+
+          <img src={Event} alt="Event" className="form_img" />
+
+        </div>
+
+      </div>
+
+    </div>
+
+  );
+
+}
+
+export default UpcomingEvents;
 
 
 
