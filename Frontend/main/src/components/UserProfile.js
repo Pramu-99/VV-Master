@@ -168,4 +168,14 @@ const UserProfile = (props) => {
       })
     ) : (
       <p>error</p>
-    )}    
+    )}
+    <div style={{ flex: '1', padding: '20px' }} >
+        
+        </div>
+        </div>
+      </div>
+    ):""
+  }
+  
+  export default UserProfile;
+      
