@@ -68,4 +68,63 @@ function UpcomingEvents() {
 
   }, []);
 
+   const savePostToMongo = async () => {
+
+    try {
+
+      console.log(formData);
+
+      await axios.post('http://localhost:8000/apply/save', formData);
+
+      Swal.fire({
+
+        title: 'Registration Successful',
+
+        text: 'Admin will accept your request',
+
+        icon: 'success',
+
+        confirmButtonText: 'OK'
+
+      });
+
+      setFormData({
+
+        userregno: memRegNo,
+
+        event: '',
+
+        roleapply: '',
+
+        status: false,
+
+        marks:0,
+
+      });
+
+      
+
+    } catch (error) {
+
+      Swal.fire({
+
+        title: 'Error',
+
+        text: 'Please check your internet Connection',
+
+        icon: 'error',
+
+        confirmButtonText: 'OK'
+
+      });
+
+      console.error('Error saving post:', error.message);
+
+    }
+
+  };
+
+
+
+
 
