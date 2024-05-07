@@ -62,4 +62,10 @@ function UpcomingEvents() {
 
     };
 
+    fetchData();
+
+    console.log(eventDetails.status);
+
+  }, []);
+
 
