@@ -86,12 +86,94 @@ function UserReview() {
       console.error('Error saving post:', error.message);
     }
   };
-
-  
-
   const onSubmit = () => {
     //console.log(formData);
     console.log(regNo);
     console.log(currentValue);
     savePostToMongo();
   };
+
+  return (
+    <div style={styles.Review}>
+      <UserNavbar/>
+    <form style={styles.container} >
+      <h2>REVIEW</h2>
+      
+      <select style={styles.boxBack}  name="regno" onChange={handleChange}>
+      {Array.isArray(members.existingPosts) ? (
+            members.existingPosts.map((res, index) => (
+              
+        <option value={res.regno}>{res.fname} {res.lname}</option>
+            ))
+      ):(
+        <option>no any records</option>
+      )
+          }
+      </select>
+      <select style={styles.boxBack} name='role' onChange={handleChange}>
+        <option value={"Cameraman"}>As A Cameraman</option>
+        <option value={"Editor"}>As A Editor</option>
+      </select>
+     <p></p>
+      <h2>Rate Us</h2>
+      <div style={StyleSheet.stars}>
+      {stars.map((_key, index) => {
+          return (
+        <FaStar
+        key={index}
+        size={20}
+        styles={{
+          marginRight: 10,
+          cursor: "hand",
+        }}
+        color={
+          (formData.rate)>index  
+          ? colors.orange
+          : colors.grey
+        }
+
+        
+        />
+          )})
+      }     
+        {/*{stars.map((_key, index) => {
+          return (
+            <FaStar
+              key={index}
+              size={20}
+              styles={{
+                marginRight: 10,
+                cursor: "hand",
+              }}
+              color={
+                (hoverValue || currentValue) > index &&
+                (currentValue > 2 || hoverValue > 2)
+                  ? colors.lightGreen
+                  : (hoverValue || currentValue) > index
+                  ? colors.orange
+                  : colors.grey
+              }
+              //onMouseMove={console.log(hoverValue, currentValue, index)}
+              onClick={() => handleClick(index + 1)}
+              
+              
+              onChange={handleChange}
+              onMouseOver={() => handleMouseOver(index + 1)}
+              onMouseLeave={handleMouseLeave}
+            />
+          );
+        })}*/}
+        <input type="number" max={"5"} min={"1"} name="rate" style={styles.ratingBox} value={formData.rate} onChange={handleChange} title={"can be review by 1 to 5 rates"}/>
+      </div>
+      <textarea
+        placeholder="Review Here" name="reviewmsg"
+        style={Object.assign({}, styles.textarea, styles.boxBack)}
+        onChange={handleChange}
+        value={formData.reviewmsg}
+      />
+      <br />
+      <input type="button" style={styles.button} onClick={onSubmit} value={"Post"}/>
+    </form>
+    </div>
+  );
+}
