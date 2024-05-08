@@ -23,3 +23,12 @@ function UserReview() {
     rate:'',
     reviewmsg:'',
   });
+
+  const stars = Array(5).fill(0);
+  const [currentValue, setCurrentValue] = useState(0);
+  const [hoverValue, setHoverValue] = useState(undefined);
+  const [reviewMsg,setReviewMsg] = useState();
+  const [regNo,setRegNo]= useState();
+  const [members, setMembers] = useState(["nimal"]); // Corrected the initialization here
+  
+  const [isLoading, setLoading] = useState(false);
