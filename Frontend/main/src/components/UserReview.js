@@ -8,3 +8,18 @@ const colors = {
   lightGreen: "#afdd37",
   lightPink: "#f3f1ff",
 };
+const Swal = require('sweetalert2');
+
+function UserReview() {
+
+  const memRegNo=localStorage.getItem('username');
+  localStorage.setItem('username', memRegNo);
+  console.log(memRegNo);
+
+  const [formData, setFormData] = useState({
+    userregno:memRegNo,
+    regno:'',
+    role:'',
+    rate:'',
+    reviewmsg:'',
+  });
