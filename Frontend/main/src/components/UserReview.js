@@ -177,3 +177,22 @@ function UserReview() {
     </div>
   );
 }
+
+const styles = {
+  Review:{
+    height:"100vh",
+ // backgroundColor:"rgba(128, 128, 128, 0.281)",
+  },
+  container: {
+    boxShadow: "2px 2px 10px #222",
+    backgroundColor: "#FFF",
+  //  border: "1px solid black",
+    borderRadius: 15,
+    width: "400px",
+    padding: "50px",
+    flexDirection: "column",
+    alignItems: "start",
+    
+    marginTop:"3%",
+    marginLeft:"35%",
+  },
