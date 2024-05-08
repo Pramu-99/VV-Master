@@ -196,3 +196,37 @@ const styles = {
     marginTop:"3%",
     marginLeft:"35%",
   },
+  textarea: {
+    border: "1px solid #a9a9a9",
+    borderRadius: 5,
+    width: 400,
+    margin: "20px 0",
+    minHeight: 100,
+    padding: 10,
+  },
+  button: {
+    boxShadow: "2px 2px 10px #2222228e",
+    border: "0px",
+    borderRadius: 5,
+    backgroundImage: "linear-gradient(#dddc68, #67d965)",
+    width: 100,
+    padding: 10,
+  },
+  boxBack: {
+    backgroundColor: colors.lightPink,
+    padding: 10,
+    width:200,
+    border: "0px",
+    boxShadow: "2px 2px 10px #2222228e",
+    borderRadius: 5,
+  },
+  ratingBox: {
+    border: "1px solid #a9a9a9",
+    borderRadius: 5,
+    margin: "0px 20px",
+    padding:1,
+    boxShadow: "2px 2px 10px #2222228e",
+  }
+};
+
+export default UserReview;
