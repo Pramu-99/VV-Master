@@ -72,3 +72,13 @@ const UserLogin = () => {
         </form>
         <span className='logoareaLogin'>
           <div className='blurArea'>
+            </div>
+          <img src={logo1} className='logoVanni'/>
+        </span>
+      </div>
+    </div>
+  );
+};
+
+export default UserLogin;
+
