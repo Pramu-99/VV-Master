@@ -1,0 +1,269 @@
+/* styles.css */
+
+/* Root section styles */
+.root {
+    background-image: url('../../assets/images/background.png');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 800px;
+}/* Root section styles */
+.root {
+    background-image: url('../../assets/images/background.png');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 800px;
+}
+
+/* Logo container styles */
+.logo-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+/* Logo image styles */
+.logo-image {
+    height: 200px;
+}
+
+/* Form container styles */
+.mainBox-container {
+    width: 100%; /* Updated to full width for responsiveness */
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.relative {
+    position: relative;
+}
+
+/* Form styles */
+.form-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Form title styles */
+.form-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+/* Form subtitle styles */
+.form-subtitle {
+    text-align: center;
+}
+
+.input-container {
+    position: relative;
+    width: 100%; /* Updated to full width for responsiveness */
+    margin-bottom: 20px; /* Increased margin for spacing */
+}
+
+/* Input box styles */
+.input-box {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px; /* Increased margin for spacing */
+    box-sizing: border-box; /* Added box-sizing to include padding in width */
+}
+
+/* Textarea styles */
+.inputMessage-box {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: vertical; /* Allow vertical resizing for textarea */
+    margin-bottom: 20px; /* Increased margin for spacing */
+    box-sizing: border-box; /* Added box-sizing to include padding in width */
+}
+
+/* Icon styles */
+.icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 8px; /* Adjusted left position */
+    color: #ccc;
+}
+
+/* Error message styles */
+.error-message {
+    color: #ff0000;
+}
+
+/* Button container styles */
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+/* Submit button styles */
+.submit-button {
+    background-color: #3498db;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #36383a;
+}
+
+/* Image container styles */
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Contact image styles */
+.contact-image {
+    height: 300px;
+    width: 100%; /* Updated to full width for responsiveness */
+    max-width: 390px; /* Added max-width for smaller screens */
+}
+
+/* Logo container styles */
+.logo-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+/* Logo image styles */
+.logo-image {
+    height: 200px;
+}
+
+/* Form container styles */
+.mainBox-container {
+    width: 800px;
+    height: max-content;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.relative {
+    position: relative;
+}
+
+/* Form styles */
+.form-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/* Form title styles */
+.form-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+/* Form subtitle styles */
+.form-subtitle {
+    text-align: center;
+}
+
+.input-container{
+    position: relative;
+    /* margin: 12px 0; */
+}
+
+/* Input box styles */
+.input-box {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 3px;
+    padding-left: 35px;
+}
+
+/* TextMessage styles */
+.inputMessage-box {
+    width: 100%;
+    padding: 8px;
+}
+
+/* Icon styles */
+.icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2px;
+    color: #ccc;
+}
+
+/* Error message styles */
+.error-message {
+    color: #ff0000;
+}
+
+/* Button container styles */
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+/* Submit button styles */
+.submit-button {
+    background-color: #3498db;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #36383a;
+}
+
+/* Image container styles */
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Contact image styles */
+.contact-image {
+    height: 300px;
+    width: 390px;
+}
