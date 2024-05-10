@@ -70,3 +70,5 @@ const UserLogin = () => {
           <button className='loginButton' onClick={handleSubmit}>Login Now</button>
           <a href='/register' className='labelLogin'><p><label>SignUp</label>  Here</p></a>
         </form>
+        <span className='logoareaLogin'>
+          <div className='blurArea'>
