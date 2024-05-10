@@ -53,3 +53,7 @@ const UserLogin = () => {
             });
         }
     };
+
+  return (
+    <div className='loginBack'>
+      <UserNavbar/>
