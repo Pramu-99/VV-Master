@@ -17,3 +17,39 @@ const UserLogin = () => {
 
     const handleSubmit = async (event) => {
       event.preventDefault();
+
+     try {
+            const user={ regno, pass };
+            const response = await axios.post('http://localhost:8000/post/login',user);
+            console.log('suc:',response.data);
+            
+            if (response.data.success === "success") {
+              localStorage.setItem('username', regno);
+                
+                console.log(localStorage.getItem('username'));
+                Swal.fire({
+                    title: 'Success',
+                    text: 'Login Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+                navigate('/');
+            } else {
+              
+              Swal.fire({
+                  title: 'Error',
+                  text: 'Incorrect Username or Password',
+                  icon: 'error',
+                  confirmButtonText: 'OK'
+              });
+            }
+        } catch (error) {
+            console.error('Error:', error.message);
+            Swal.fire({
+                title: 'Error',
+                text: 'Incorrect Username or Password',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+        }
+    };
