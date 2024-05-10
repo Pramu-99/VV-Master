@@ -57,3 +57,16 @@ const UserLogin = () => {
   return (
     <div className='loginBack'>
       <UserNavbar/>
+     <div className='outlineBorder'>
+        <form className='loginForm'>
+          <h1>LOGIN</h1>
+          <p>Vanni Vogue Digitalize System</p>
+          <input type='text' className='fa' placeholder='&#xf007; Username'
+          onChange={(event) => setRegno(event.target.value)}
+          /><br/>
+          <input type='password' className='fa' placeholder='&#xf023; Password'
+          onChange={(event) => setPass(event.target.value)}
+          /><br/>
+          <button className='loginButton' onClick={handleSubmit}>Login Now</button>
+          <a href='/register' className='labelLogin'><p><label>SignUp</label>  Here</p></a>
+        </form>
