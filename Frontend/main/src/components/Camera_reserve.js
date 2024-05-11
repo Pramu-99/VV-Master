@@ -56,3 +56,15 @@ export default function Camera_reserve(){
       }
     }
     });
+
+     console.log(selectedItems);
+    console.log(event.target.checked);
+  }
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    
+    console.log(formData.itemid);
+    console.log(formData.date);
+   
+  };
