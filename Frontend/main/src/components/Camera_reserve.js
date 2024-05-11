@@ -39,3 +39,20 @@ export default function Camera_reserve(){
     };
 
     fetchData();
+    console.log(equipment.status);
+  }, []);
+
+  const handleCheckboxes=(event)=>{
+    
+    setSelectedItems(prevSelected => {
+      if(event.target.checked==true){
+      
+        
+        return [...prevSelected, event.target.value];
+      
+    }else{
+      if (prevSelected.includes(event.target.value)) {
+        return prevSelected.pop(event.target.value) ; 
+      }
+    }
+    });
