@@ -110,3 +110,47 @@ export default function Camera_reserve(){
       console.error('Error saving post:', error.message);
     }
   };
+
+  return(
+    <div>
+      <UserNavbar/>
+  <div className="reserve">
+
+    <h1 className="reservetitle">Reservation</h1>
+    <div className="list">
+        {Array.isArray(equipment.existingPosts) ? (
+        equipment.existingPosts.map((item,key )=>{
+            return (<CameraItem
+            image={vanni} 
+            des={item.details}
+            camname={item.name}
+            item={item.itemtype}
+            brand={item.brand}
+            itemid={item._id}
+            onCheckboxChange={handleCheckboxes}
+              />
+            );
+        })
+        ):(
+          <p>error</p>
+        )
+      
+      }
+        
+    </div>
+   
+    <h1 style={{  fontSize: '40px',backgroundColor:'white',textAlign:'left',margin:'20px',  fontFamily: 'cursive'}} >Calender</h1>
+    <input  className='date' type="date" name='date' value={formData.date} onChange={handleChange}/><br/>
+    <h1 style={{  fontSize: '40px',backgroundColor:'white',textAlign:'left',margin:'20px',  fontFamily: 'cursive'}} >Purpose</h1>
+    <textarea
+        placeholder="Mention Purpose Here" name="purpose"
+        style={Object.assign({}, styles.textarea, styles.boxBack)}
+        onChange={handleChange}
+        value={formData.purpose}
+      />
+    <input  type='button'  className="confirm" value='confirm' onClick={handleConfirm}/>
+    
+    </div> 
+  </div>
+);
+}
