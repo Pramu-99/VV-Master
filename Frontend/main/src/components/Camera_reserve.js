@@ -82,3 +82,31 @@ export default function Camera_reserve(){
     }
     
   }
+
+  const savePostToMongo = async () => {
+    try {
+      
+      await axios.post('http://localhost:8000/reservation/save', formData);
+      Swal.fire({
+        title: 'Reservation Successfully',
+        text: 'Thank you for Reviewing',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
+      setFormData({
+        itemid:'',
+        userregno:memRegNo,
+        date:'',
+        purpose:'',
+      });
+      
+    } catch (error) {
+      Swal.fire({
+        title: 'Error',
+        text: 'Please check your internet Connection',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+      console.error('Error saving post:', error.message);
+    }
+  };
