@@ -23,3 +23,19 @@ export default function Camera_reserve(){
     date:'',
     purpose:'',
   });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        
+        console.log(formData.itemid);
+        const response = await axios.get('http://localhost:8000/equipments');
+        console.log('API Response:', response.data);
+        setEquipment(response.data);
+        
+      } catch (error) {
+        console.error('Error fetching members:', error.message);
+      }
+    };
+
+    fetchData();
