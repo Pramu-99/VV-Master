@@ -42,8 +42,11 @@ const postSchema=new mongoose.Schema({
     approval:{
         type:Boolean,
         required:true
+    },
+    role:{
+        type:String,
+        required:true 
     }
-    
 });
 
 module.exports=mongoose.model('posts',postSchema);
