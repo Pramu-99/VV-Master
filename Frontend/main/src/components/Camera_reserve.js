@@ -154,3 +154,22 @@ export default function Camera_reserve(){
   </div>
 );
 }
+
+const styles={
+  textarea: {
+    border: "1px solid #a9a9a9",
+    borderRadius: 5,
+    width: 400,
+    margin: "10px 30px 30px 30px",
+    minHeight: 100,
+    padding: 10,
+  },
+  boxBack: {
+    backgroundColor: "#f3f1ff",
+    padding: 10,
+    width:200,
+    border: "1px solid black",
+    boxShadow: "2px 2px 10px #2222228e",
+    borderRadius: 5,
+  }
+}
