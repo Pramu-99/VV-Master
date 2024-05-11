@@ -8,6 +8,8 @@ const app=express();
 //import routes
 const postRoutes=require('./routes/posts');
 const reviewRoutes=require('./routes/review');
+const applyRoutes=require('./routes/eventapplication');
+const eventRoutes=require('./routes/event');
 
 //app middleware
 app.use(bodyParser.json());
@@ -15,6 +17,8 @@ app.use(cors());
 //route middleware
 app.use(postRoutes);
 app.use(reviewRoutes);
+app.use(applyRoutes);
+app.use(eventRoutes);
 
 
 const PORT=8000;
