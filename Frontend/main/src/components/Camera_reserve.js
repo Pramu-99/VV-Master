@@ -68,3 +68,17 @@ export default function Camera_reserve(){
     console.log(formData.date);
    
   };
+
+  const handleConfirm=()=>{
+    console.log(selectedItems);
+    setFormData({...formData,"itemid":selectedItems});
+    console.log(formData.itemid);
+    console.log(formData.itemid[1]);
+    console.log(selectedItems);
+    console.log(formData.date);
+    console.log(formData.purpose);
+    if(formData.itemid[1]!=undefined){
+      savePostToMongo();
+    }
+    
+  }
