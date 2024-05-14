@@ -77,3 +77,4 @@ router.delete('/reservation/delete/:id', async (req, res) => {
         });
     }
 });
+module.exports = router;
