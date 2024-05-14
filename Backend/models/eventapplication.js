@@ -8,3 +8,7 @@ const applySchema=new mongoose.Schema({
         type:String,
         required:true
     },
+    roleapply:{
+        type:String,
+        required:true
+    },
