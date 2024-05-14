@@ -20,3 +20,6 @@ const applySchema=new mongoose.Schema({
         type:Number,
         require:true
     }
+});
+
+module.exports=mongoose.model('applies',applySchema);
