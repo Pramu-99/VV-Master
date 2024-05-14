@@ -12,3 +12,11 @@ const applySchema=new mongoose.Schema({
         type:String,
         required:true
     },
+     status:{
+        type:Boolean,
+        required:true
+    },
+    marks:{
+        type:Number,
+        require:true
+    }
