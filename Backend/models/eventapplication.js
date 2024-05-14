@@ -4,3 +4,7 @@ const applySchema=new mongoose.Schema({
         type:String,
         required:true
     },
+    event:{
+        type:String,
+        required:true
+    },
