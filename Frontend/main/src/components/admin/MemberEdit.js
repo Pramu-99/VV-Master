@@ -36,7 +36,44 @@ export default function MemberEdit(props) {
     }
   };
 
-  
+  const handleUpdateConfirmed = async (memId) => {
+    try {
+      console.log(formData);
+      const response = await fetch(`http://localhost:8000/post/update/${memId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      if (response.ok) {
+        console.log("Success");
+        fetchData();
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Updated Successfully",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      } else {
+        console.error('Failed to update');
+        Swal.fire({
+          position: "top-end",
+          icon: "error",
+          title: "Check Your Internet Connection",
+          showConfirmButton: false,
+          timer: 1500
+        });
+      }
+    } catch (error) {
+      console.error('Error updating:', error);
+    }
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent default form submission behavior
