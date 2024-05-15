@@ -2,7 +2,46 @@ import React, { useState, useEffect } from 'react';
 import './styles.css';
 
 export default function MemberEdit(props) {
+  const Swal = require('sweetalert2');
+  const [formData, setFormData] = useState({
+    regno: '',
+    pass: '',
+    linkedin: '',
+    facebook: '',
+    instagram: '',
+    fname: '',
+    lname: '',
+    phone: '',
+    email: '',
+    approval: '',
+    role: '',
+  });
+
+  useEffect(() => {
+    
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://localhost:8000/posts');
+      if (response.ok) {
+        const data = await response.json();
+        setFormData(data.existingPosts.filter(mem=>mem._id===props.memberid));
+      } else {
+        console.error('Failed to fetch members:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error fetching members:', error.message);
+    }
+  };
+
   
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent default form submission behavior
+    handleUpdateConfirmed(props.memberid);
+  };
 
   return props.trigger ? (
     <div style={styles.popup}>
