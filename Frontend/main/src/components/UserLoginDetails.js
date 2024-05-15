@@ -104,4 +104,25 @@ export default function UserLoginDetails() {
       <div className='logdetails-notification'>No any Request yet</div>
     )}
 
-    
+    <b>Role Apply</b>
+    {Array.isArray(applyPosition) && applyPosition.length > 0 ? (
+      applyPosition.map((event, index) =>( 
+      !isBookingExpired(event.markeddate) && (
+        <div className='logdetails-notification' key={index}>
+          event: {event.event}<br />
+          role: {event.roleapply} <br />
+          Status: {event.status ? "Accept" : "Pending..."} <br />
+          Marked Date: {event.markeddate ? formatDate(event.markeddate) : "Pending..."}<br/>
+          {event.marks ? "Marks: "+event.marks+"%" : ""}
+        </div>
+      )
+      ))
+    ) : (
+      <p>No any applies yet</p>
+    )}
+  </div>
+)}
+
+    </div>
+  );
+}
