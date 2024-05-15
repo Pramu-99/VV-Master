@@ -54,3 +54,25 @@ router.put('/apply/update/:id', async (req, res) => {
       });
     }
   });
+
+ router.delete('/apply/delete/:id', async (req, res) => {
+    try {
+        const deletedPost = await Posts.findByIdAndDelete(req.params.id).exec();
+        
+        if (!deletedPost) {
+            return res.status(404).json({
+                message: "Post not found"
+            });
+        }
+
+        return res.json({
+            message: "Delete successful",
+            deletedPost
+        });
+    } catch (err) {
+        return res.status(400).json({
+            message: "Delete unsuccessful",
+            error: err.message
+        });
+    }
+});
