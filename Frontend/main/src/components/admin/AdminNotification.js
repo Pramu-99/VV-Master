@@ -223,10 +223,50 @@ const handleDeleteApply = async (applyId) => {
               </div>
               
           </div>
+          <h2>Event  Approval</h2><Accordion.Item>
+          <Accordion.Body>
           
+          <div className="container py-4 bg-body">
+              
+              <div className="row">
+                  <Accordion defaultActiveKey={['0']} alwaysOpen>
+                  {Array.isArray(applyMem) && applyMem.length > 0 ? (
+                      applyMem.map((event, index) => (
+                          <Accordion.Item key={index} eventKey={index.toString()}>
+                              <Accordion.Header style={{ fontSize: '20px' }}>{event.userregno} : {event.roleapply}</Accordion.Header>
+                              <Accordion.Body>
+                                  
+                                  {Array.isArray(allMem) && allMem.length > 0 ? (
+                      allMem.map((mem, index) => {
+                                  
+                        if(mem.regno===event.userregno){
+                          return(
+                            <div key={index}>
+                                Name : {mem.fname} {mem.lname}<br/>
+                                Phone : {mem.phone}
+                            </div>
+                          
+                          );
+                        }
+                          
+                      })
+                                  ):""}
+                                  event: <b>{event.event}</b><br/>
+                                  <button className='btn btn-primary btn-approve text-capitalize' onClick={() => handleApproveApply(event)}>Approve</button>
+                                  <button className='btn btn-danger text-capitalize btn-red' onClick={() => handleDeleteApply(event._id)}>Reject</button>
+                              </Accordion.Body>
+                          </Accordion.Item>
+                      ))
+                  ) : <p>No any event applicant found.</p>
+                  }
+                  </Accordion>
               </div>
               
           </div>
+          </Accordion.Body>
+          </Accordion.Item>
+          <h2>Equipments Approval</h2>
+          
           <footer className="text-center fixed-bottom mb-3" id='footer'>
                   <p>&copy; Vanni Vogue Camera Club</p>
           </footer>
