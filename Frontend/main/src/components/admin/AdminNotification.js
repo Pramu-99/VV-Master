@@ -266,7 +266,64 @@ const handleDeleteApply = async (applyId) => {
           </Accordion.Body>
           </Accordion.Item>
           <h2>Equipments Approval</h2>
-          
+          <div className="container py-4 bg-body">
+              
+              <div className="row">
+                  <Accordion defaultActiveKey={['0']} alwaysOpen>
+                  {Array.isArray(reservationMem) && reservationMem.length > 0 ? (
+                      reservationMem.map((event, index) => (
+                          <Accordion.Item key={index} eventKey={index.toString()}>
+                              <Accordion.Header style={{ fontSize: '20px' }}>{event.userregno} : {event.date}</Accordion.Header>
+                              <Accordion.Body>
+                              {Array.isArray(allMem) && allMem.length > 0 ? (
+                      allMem.map((mem, index) => {
+                                  
+                        if(mem.regno===event.userregno ){
+                          return(
+                            <div key={index}>
+                                Name : {mem.fname} {mem.lname}<br/>
+                                Phone : {mem.phone}<br/>
+                                Email : {mem.email}<br/>
+                                Item:
+                            </div>
+                          
+                          );
+                        }
+                          
+                      })
+                                  ):""}
+
+                        <ul>
+                                  {Array.isArray(equipments) && equipments.length > 0 ? (
+                      equipments.map((equ, indexeq) => {
+                       for(let i=0;i<event.itemid.length;i++){
+                        if(equ._id===event.itemid[i]){
+                          return(
+                            <li>
+                                 {equ.name} {equ.brand} {equ.itemtype} <br/>
+                                
+                            </li>
+                          
+                          );
+                        }
+                      }
+                      
+                          
+                      })
+                                  ):""}
+                        </ul>
+                        Purpose: {event.purpose}<br/>
+                                  <button className='btn btn-primary btn-approve text-capitalize' onClick={() => handleApproveReserve(event)}>Approve</button>
+                                  <button className='btn btn-danger text-capitalize btn-red' onClick={() => handleDeleteReserve(event._id)}>Reject</button>
+                              </Accordion.Body>
+                          </Accordion.Item>
+                      ))
+                  ) : <p>No any equipment requests found.</p>
+                  }
+                  </Accordion>
+              </div>
+              
+          </div>
           <footer className="text-center fixed-bottom mb-3" id='footer'>
                   <p>&copy; Vanni Vogue Camera Club</p>
           </footer>
