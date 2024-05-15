@@ -76,3 +76,4 @@ router.put('/apply/update/:id', async (req, res) => {
         });
     }
 });
+module.exports = router;
