@@ -53,7 +53,48 @@ export default function UserLoginDetails() {
     return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
   };
 
-  
+  const isBookingExpired = (dateString) => {
+    const bookingDate = new Date(dateString);
+    const currentDate = new Date();
+    const differenceInTime = currentDate.getTime() - bookingDate.getTime();
+    const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+    return differenceInDays > 7;
+  };
+
+  const handleSignout = () => {
+    // Remove the username from localStorage
+    if (storeRegno != null) {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "Do you want to Signout!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, Signout!"
+
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Signout!",
+            text: "You were Signout",
+            icon: "success"
+          });
+          localStorage.removeItem('username');
+          navigate('/');
+        }
+      });
+
+    } else {
+      Swal.fire({
+        title: 'Error',
+        text: 'you were Signout.',
+        icon: 'error',
+        confirmButtonText: 'OK'
+      });
+    }
+  };
+
   return (
     <div>
       <div className='logdetails'>
