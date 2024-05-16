@@ -29,3 +29,55 @@ function AboutUs() {
       });
     };
   }, []);
+
+return (
+    <div>
+      <style>
+        {`
+          body {
+            scroll-behavior: smooth;
+          }
+
+          .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+          }
+
+          .card-title {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+          }
+
+          .card-text {
+            font-family: 'Verdana', sans-serif;
+            color: #555;
+          }
+
+          .btn {
+            transition: all 0.3s ease;
+          }
+
+          .btn:hover {
+            transform: scale(1.05);
+          }
+
+          .list-group-item {
+            border: none;
+            padding-left: 0;
+          }
+
+          .list-group-item strong {
+            font-size: 1.1em;
+          }
+
+          .text-center {
+            text-align: center;
+          }
+
+          .card-img-top {
+            width: 100%;
+            height: auto;
+          }
+        `}
+      </style> 
